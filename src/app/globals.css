@@ -25,3 +25,21 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+@keyframes textColorAnimation {
+  0% {
+    color: red;
+  }
+  25% {
+    color: rgb(43, 245, 24);
+  }
+  50% {
+    color: rgb(0, 174, 255);
+  }
+  75% {
+    color: yellow;
+  }
+  100% {
+    color: red;
+  }
+}
