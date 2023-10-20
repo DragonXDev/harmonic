@@ -1,3 +1,14 @@
+<picture>
+
+  <source media="(prefers-color-scheme: dark)" srcset="./public/harmonic@dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="./public/harmonic@light.png">
+  <img src="./assets/harmonic@dark.png">
+</picture>
+
+<p align="center">
+A new way to bring together mathematics and music.
+</p>
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
