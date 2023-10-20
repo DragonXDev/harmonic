@@ -1,9 +1,17 @@
-<picture>
+<div align="center">
 
+<picture>
   <source media="(prefers-color-scheme: dark)" srcset="./public/harmonic@dark.png">
   <source media="(prefers-color-scheme: light)" srcset="./public/harmonic@light.png">
-  <img src="./assets/harmonic@dark.png">
+  <img width="200px" height="200px" src="./assets/harmonic@dark.png">
 </picture>
+
+<h1>Harmonic</h1>
+
+</div>
+
+
+
 
 <p align="center">
 A new way to bring together mathematics and music.
