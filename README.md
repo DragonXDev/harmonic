@@ -10,9 +10,6 @@
 
 </div>
 
-
-
-
 <p align="center">
 A new way to bring together mathematics and music.
 </p>
