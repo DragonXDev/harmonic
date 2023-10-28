@@ -21,7 +21,7 @@ type Props = {
 }
 
 const Navbar = ({ }: Props) => {
-  const [currentRoute, setCurrentRoute] = useState("Main Dashboard");
+  const [currentRoute, setCurrentRoute] = useState("Music Analysis");
 
   const pathname = usePathname()
   const { setOpenSidebar } = useSidebarContext()
@@ -32,7 +32,7 @@ const Navbar = ({ }: Props) => {
   }, [pathname]);
 
   const getActiveRoute = (routes: any) => {
-    let activeRoute = "Main Dashboard";
+    let activeRoute = "Music Analysis";
     for (let i = 0; i < routes.length; i++) {
       if (window.location.href.indexOf(routes[i].path) !== -1) {
         setCurrentRoute(routes[i].name);

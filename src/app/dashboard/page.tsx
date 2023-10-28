@@ -1,42 +1,26 @@
-import Navbar from "../components/navbar"
-import Sidebar from "../components/sidebar";
-import SidebarProvider from "../../../providers/SidebarProvider";
-import React from "react";
-import FixedPlugin from "../components/fixedPlugin/FixedPlugin";
+import dynamic from 'next/dynamic';
+import { FC } from 'react';
 
-export default function DashboardLayout({
-    children, // will be a page or nested layout
-}: {
-    children: React.ReactNode;
-}) {
+// import MiniCalendar from "@/components/calendar/MiniCalendar";
+import PieChartCard from "./components/PieChartCard";
+import Upload from "./components/Upload";
 
+
+
+type Props = {};
+
+const DashboardPage: FC<Props> = () => {
     return (
         <>
-            <FixedPlugin />
-            <SidebarProvider>
-                <section className="flex h-full w-full">
-                    <Sidebar />
+        
+                {/* Traffic chart & Pie Chart */}
+                <div className="grid grid-cols-1 gap-5 pt-5 rounded-[20px] md:grid-cols-2">
+                    <PieChartCard />
+                    <Upload/>
+                </div>
 
-                    {/* Navbar & Main Content */}
-                    <div className="h-full w-full bg-lightPrimary dark:!bg-navy-900">
-
-                        {/* Main Content */}
-                        <main className='mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[313px]' >
-                            {/* Routes */}
-                            <div className="h-full">
-                                <Navbar />
-
-                                <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
-                                    {children}
-                                </div>
-
-                            </div>
-                        </main>
-
-                    </div>
-
-                </section>
-            </SidebarProvider>
         </>
     );
 }
+
+export default DashboardPage;
