@@ -3,7 +3,7 @@
 
 const routes = [
   {
-    name: "Main Dashboard",
+    name: "Music Analysis",
     layout: "/dashboard",
     path: "dashboard",
   },
