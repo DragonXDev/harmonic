@@ -157,7 +157,7 @@ export const pieChartOptions = {
   },
 };
 
-export const pieChartData = [73, 20, 7];
+export const pieChartData = [23, 20, 7];
 
 export const barChartDataWeeklyRevenue = [
   {
@@ -279,6 +279,7 @@ export const lineChartDataTotalSpent = [
   },
 ];
 
+
 export const lineChartOptionsTotalSpent = {
   legend: {
     show: false,
@@ -288,8 +289,7 @@ export const lineChartOptionsTotalSpent = {
     mode: "light",
   },
   chart: {
-    type: "line",
-
+    type: "line", // Specify the chart type as "line"
     toolbar: {
       show: false,
     },
@@ -332,7 +332,7 @@ export const lineChartOptionsTotalSpent = {
     },
     type: "text",
     range: undefined,
-    categories: ["SEP", "OCT", "NOV", "DEC", "JAN", "FEB"],
+    categories: ["AAA", "OCT", "NOV", "DEC", "JAN", "FEB"],
   },
 
   yaxis: {

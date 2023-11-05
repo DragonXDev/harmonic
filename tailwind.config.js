@@ -14,110 +14,168 @@ module.exports = {
       },
       animation: {
         textColorAnimation: "textColorAnimation 9s ease-in-out infinite",
+        "text-slide":
+          "text-slide 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite",
+        "text-slide-2":
+          "text-slide-2 5s cubic-bezier(0.83, 0, 0.17, 1) infinite",
+        "text-slide-3":
+          "text-slide-3 7.5s cubic-bezier(0.83, 0, 0.17, 1) infinite",
+        "text-slide-4":
+          "text-slide-4 10s cubic-bezier(0.83, 0, 0.17, 1) infinite",
+        "text-slide-5":
+          "text-slide-5 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite",
+        "text-slide-6":
+          "text-slide-6 15s cubic-bezier(0.83, 0, 0.17, 1) infinite",
+        "text-slide-7":
+          "text-slide-7 17.5s cubic-bezier(0.83, 0, 0.17, 1) infinite",
+        "text-slide-8":
+          "text-slide-8 20s cubic-bezier(0.83, 0, 0.17, 1) infinite",
       },
-      width: {
-        "1p": "1%",
-        "2p": "2%",
-        "3p": "3%",
-        "4p": "4%",
-        "5p": "5%",
-        "6p": "6%",
-        "7p": "7%",
-        "8p": "8%",
-        "9p": "9%",
-        "10p": "10%",
-        "11p": "11%",
-        "12p": "12%",
-        "13p": "13%",
-        "14p": "14%",
-        "15p": "15%",
-        "16p": "16%",
-        "17p": "17%",
-        "18p": "18%",
-        "19p": "19%",
-        "20p": "20%",
-        "21p": "21%",
-        "22p": "22%",
-        "23p": "23%",
-        "24p": "24%",
-        "25p": "25%",
-        "26p": "26%",
-        "27p": "27%",
-        "28p": "28%",
-        "29p": "29%",
-        "30p": "30%",
-        "31p": "31%",
-        "32p": "32%",
-        "33p": "33%",
-        "34p": "34%",
-        "35p": "35%",
-        "36p": "36%",
-        "37p": "37%",
-        "38p": "38%",
-        "39p": "39%",
-        "40p": "40%",
-        "41p": "41%",
-        "42p": "42%",
-        "43p": "43%",
-        "44p": "44%",
-        "45p": "45%",
-        "46p": "46%",
-        "47p": "47%",
-        "48p": "48%",
-        "49p": "49%",
-        "50p": "50%",
-        "51p": "51%",
-        "52p": "52%",
-        "53p": "53%",
-        "54p": "54%",
-        "55p": "55%",
-        "56p": "56%",
-        "57p": "57%",
-        "58p": "58%",
-        "59p": "59%",
-        "60p": "60%",
-        "61p": "61%",
-        "62p": "62%",
-        "63p": "63%",
-        "64p": "64%",
-        "65p": "65%",
-        "66p": "66%",
-        "67p": "67%",
-        "68p": "68%",
-        "69p": "69%",
-        "70p": "70%",
-        "71p": "71%",
-        "72p": "72%",
-        "73p": "73%",
-        "74p": "74%",
-        "75p": "75%",
-        "76p": "76%",
-        "77p": "77%",
-        "78p": "78%",
-        "79p": "79%",
-        "80p": "80%",
-        "81p": "81%",
-        "82p": "82%",
-        "83p": "83%",
-        "84p": "84%",
-        "85p": "85%",
-        "86p": "86%",
-        "87p": "87%",
-        "88p": "88%",
-        "89p": "89%",
-        "90p": "90%",
-        "91p": "91%",
-        "92p": "92%",
-        "93p": "93%",
-        "94p": "94%",
-        "95p": "95%",
-        "96p": "96%",
-        "97p": "97%",
-        "98p": "98%",
-        "99p": "99%",
+      keyframes: {
+        "text-slide-2": {
+          "0%, 40%": {
+            transform: "translateY(0%)",
+          },
+          "50%, 90%": {
+            transform: "translateY(-33.33%)",
+          },
+          "100%": {
+            transform: "translateY(-66.66%)",
+          },
+        },
+        "text-slide-3": {
+          "0%, 26.66%": {
+            transform: "translateY(0%)",
+          },
+          "33.33%, 60%": {
+            transform: "translateY(-25%)",
+          },
+          "66.66%, 93.33%": {
+            transform: "translateY(-50%)",
+          },
+          "100%": {
+            transform: "translateY(-75%)",
+          },
+        },
+        "text-slide-4": {
+          "0%, 20%": {
+            transform: "translateY(0%)",
+          },
+          "25%, 45%": {
+            transform: "translateY(-20%)",
+          },
+          "50%, 70%": {
+            transform: "translateY(-40%)",
+          },
+          "75%, 95%": {
+            transform: "translateY(-60%)",
+          },
+          "100%": {
+            transform: "translateY(-80%)",
+          },
+        },
+        "text-slide-5": {
+          "0%, 16%": {
+            transform: "translateY(0%)",
+          },
+          "20%, 36%": {
+            transform: "translateY(-16.66%)",
+          },
+          "40%, 56%": {
+            transform: "translateY(-33.33%)",
+          },
+          "60%, 76%": {
+            transform: "translateY(-50%)",
+          },
+          "80%, 96%": {
+            transform: "translateY(-66.66%)",
+          },
+          "100%": {
+            transform: "translateY(-83.33%)",
+          },
+        },
+        "text-slide-6": {
+          "0%, 13.33%": {
+            transform: "translateY(0%)",
+          },
+          "16.66%, 30%": {
+            transform: "translateY(-16.67%)",
+          },
+          "33.33%, 46.66%": {
+            transform: "translateY(-33.33%)",
+          },
+          "50%, 63.33%": {
+            transform: "translateY(-50%)",
+          },
+          "66.66%, 80%": {
+            transform: "translateY(-66.67%)",
+          },
+          "83.33%, 96.66%": {
+            transform: "translateY(-83.33%)",
+          },
+          "100%": {
+            transform: "translateY(-100%)",
+          },
+        },
+        "text-slide-7": {
+          "0%, 11.43%": {
+            transform: "translateY(0%)",
+          },
+          "14.28%, 25.71%": {
+            transform: "translateY(-12.5%)",
+          },
+          "28.57%, 40%": {
+            transform: "translateY(-25%)",
+          },
+          "42.85%, 54.28%": {
+            transform: "translateY(-37.5%)",
+          },
+          "57.14%, 68.57%": {
+            transform: "translateY(-50%)",
+          },
+          "71.42%, 82.85%": {
+            transform: "translateY(-62.5%)",
+          },
+          "85.71%, 97.14%": {
+            transform: "translateY(-75%)",
+          },
+          "100%": {
+            transform: "translateY(-87.5%)",
+          },
+        },
+        "text-slide-8": {
+          "0%, 10%": {
+            transform: "translateY(0%)",
+          },
+          "12.5%, 22.5%": {
+            transform: "translateY(-11.11%)",
+          },
+          "25%, 35%": {
+            transform: "translateY(-22.22%)",
+          },
+          "37.5%, 47.5%": {
+            transform: "translateY(-33.33%)",
+          },
+          "50%, 60%": {
+            transform: "translateY(-44.44%)",
+          },
+          "62.5%, 72.5%": {
+            transform: "translateY(-55.55%)",
+          },
+          "75%, 85%": {
+            transform: "translateY(-66.66%)",
+          },
+          "87.5%, 97.5%": {
+            transform: "translateY(-77.77%)",
+          },
+          "100%": {
+            transform: "translateY(-88.88%)",
+          },
+        },
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
         dm: ["DM Sans", "sans-serif"],
       },
       boxShadow: {
@@ -129,6 +187,7 @@ module.exports = {
         primary: "20px",
       },
     },
+
     screens: {
       sm: "576px",
       "sm-max": { max: "576px" },
@@ -172,7 +231,7 @@ module.exports = {
         600: "#24388a",
         700: "#1B254B",
         800: "#111c44",
-        900: "#0b1437",
+        900: "#355070",
       },
       red: {
         50: "#ee5d501a",
@@ -184,7 +243,7 @@ module.exports = {
         600: "#ea0606",
         700: "#b91c1c",
         800: "#991b1b",
-        900: "#7f1d1d",
+        900: "#E88C7A",
       },
       orange: {
         50: "#fff7ed",
@@ -195,7 +254,7 @@ module.exports = {
         500: "#f97316",
         600: "#ea580c",
         700: "#c2410c",
-        800: "#9a3412",
+        800: "#EAAC8B",
         900: "#7c2d12",
       },
       amber: {
@@ -335,5 +394,5 @@ module.exports = {
       },
     }),
   },
-  plugins: [require("tailwindcss-rtl")],
+  plugins: [require("tailwindcss-rtl"), require("daisyui")],
 };
