@@ -18,7 +18,7 @@ export default function DashboardLayout({
                     <Sidebar />
 
                     {/* Navbar & Main Content */}
-                    <div className="h-full w-full bg-lightPrimary dark:!bg-navy-900">
+                    <div className="h-full w-full bg-lightPrimary dark:!bg-orange-800">
 
                         {/* Main Content */}
                         <main className='mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[313px]' >

@@ -4,8 +4,8 @@ import Card from "../../components/card";
 
 const PieChart = dynamic(() => import("../../components/charts/PieChart"), {
   loading: () => <p>loading...</p>,
-  ssr: false
-})
+  ssr: false,
+});
 
 const PieChartCard = () => {
   return (
