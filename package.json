@@ -9,18 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "daisyui": "^3.9.3",
+    "@supabase/auth-helpers-nextjs": "^0.8.3",
+    "@supabase/supabase-js": "^2.38.4",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5",
     "langchain": "^0.0.172",
     "next": "13.5.5",
     "openai": "^4.13.0",
     "react": "^18",
+    "react-apexcharts": "^1.4.1",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "react-p5": "^1.4.1"
+    "react-p5": "^1.4.1",
+    "recharts": "^2.9.2"
   },
   "devDependencies": {
     "@types/react": "18.2.33",
     "autoprefixer": "^10",
+    "daisyui": "^3.9.4",
     "eslint": "^8",
     "eslint-config-next": "13.5.5",
     "postcss": "^8",

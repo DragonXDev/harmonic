@@ -1,42 +1,31 @@
-import Navbar from "../components/navbar"
-import Sidebar from "../components/sidebar";
-import SidebarProvider from "../../../providers/SidebarProvider";
-import React from "react";
-import FixedPlugin from "../components/fixedPlugin/FixedPlugin";
+"use client";
+import { FC, useState } from "react";
+// import MiniCalendar from "@/components/calendar/MiniCalendar";
+import PieChartCard from "./components/PieChartCard";
+import Upload from "./components/Upload";
+import LineGraph from "./components/LineChartCard";
 
-export default function DashboardLayout({
-    children, // will be a page or nested layout
-}: {
-    children: React.ReactNode;
-}) {
+type Props = {};
 
-    return (
-        <>
-            <FixedPlugin />
-            <SidebarProvider>
-                <section className="flex h-full w-full">
-                    <Sidebar />
+function DashboardPage() {
+  const [graphData, setGraphData] = useState(null);
+  const handleDataReceived = (data) => {
+    setGraphData(data);
+    console.log("WE DID IT!");
+  };
 
-                    {/* Navbar & Main Content */}
-                    <div className="h-full w-full bg-lightPrimary dark:!bg-navy-900">
-
-                        {/* Main Content */}
-                        <main className='mx-[12px] h-full flex-none transition-all md:pr-2 xl:ml-[313px]' >
-                            {/* Routes */}
-                            <div className="h-full">
-                                <Navbar />
-
-                                <div className="pt-5s mx-auto mb-auto h-full min-h-[84vh] p-2 md:pr-2">
-                                    {children}
-                                </div>
-
-                            </div>
-                        </main>
-
-                    </div>
-
-                </section>
-            </SidebarProvider>
-        </>
-    );
+  return (
+    <>
+      {/* Traffic chart & Pie Chart */}
+      <div className="grid grid-cols-1 gap-5 pt-5 rounded-[20px] md:grid-cols-2">
+        <PieChartCard />
+        <Upload onDataReceived={handleDataReceived} />
+      </div>
+      <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-1">
+        <LineGraph result={graphData} />
+      </div>
+    </>
+  );
 }
+
+export default DashboardPage;

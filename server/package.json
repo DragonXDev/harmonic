@@ -1,0 +1,16 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "dependencies": {
+    "audio-decode": "^2.1.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "fft-js": "^0.0.12",
+    "multer": "^1.4.4"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
