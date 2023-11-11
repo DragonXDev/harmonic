@@ -28,7 +28,7 @@ async function analyzeAudioFile(filePath) {
       return null;
     }
 
-    const numberOfSections = 100;
+    const numberOfSections = 500;
     const sectionLength = Math.floor(lastSoundSample / numberOfSections);
     const coordinates = [];
 
