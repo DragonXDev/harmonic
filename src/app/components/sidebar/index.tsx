@@ -1,26 +1,34 @@
-'use client'
+"use client";
 
-import { FC } from 'react'
+import { FC } from "react";
 import { HiX } from "react-icons/hi";
-import { useSidebarContext } from '../../../../providers/SidebarProvider';
-import useMobileView from '../../hooks/useMobileView';
+import { useSidebarContext } from "@/providers/SidebarProvider";
+import useMobileView from "../../hooks/useMobileView";
 import Links from "./components/Links";
-import React from 'react';
+import React from "react";
 
-type Props = {}
+type Props = {};
 
 const Sidebar: FC<Props> = () => {
-  const { isMobile } = useMobileView()
-  const { openSidebar, setOpenSidebar } = useSidebarContext()
+  const { isMobile } = useMobileView();
+  const { openSidebar, setOpenSidebar } = useSidebarContext();
 
   return (
     <>
-      <div className={`bg-[#000] bg-opacity-70 absolute inset-0 z-50 ${openSidebar && isMobile ? 'block w-screen h-full' : 'hidden'}`} onClick={() => setOpenSidebar(false)} />
+      <div
+        className={`bg-[#000] bg-opacity-70 absolute inset-0 z-50 ${
+          openSidebar && isMobile ? "block w-screen h-full" : "hidden"
+        }`}
+        onClick={() => setOpenSidebar(false)}
+      />
       <div
         className={`sm:none duration-175 linear fixed !z-50 flex min-h-full flex-col bg-white pb-10 shadow-2xl shadow-white/5 transition-all dark:!bg-navy-800 dark:text-white md:!z-50 lg:!z-50 xl:!z-0 
         ${openSidebar ? "translate-x-0" : "-translate-x-96"}`}
       >
-        <span className="absolute top-4 right-4 block cursor-pointer xl:hidden" onClick={() => setOpenSidebar(false)} >
+        <span
+          className="absolute top-4 right-4 block cursor-pointer xl:hidden"
+          onClick={() => setOpenSidebar(false)}
+        >
           <HiX />
         </span>
 
@@ -34,7 +42,9 @@ const Sidebar: FC<Props> = () => {
 
         {/* Nav item */}
         <ul className="mb-auto pt-1">
-          <Links onClickRoute={isMobile ? () => setOpenSidebar(false) : undefined} />
+          <Links
+            onClickRoute={isMobile ? () => setOpenSidebar(false) : undefined}
+          />
         </ul>
 
         {/* Free Horizon Card */}

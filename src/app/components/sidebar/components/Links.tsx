@@ -1,21 +1,20 @@
-'use client'
+"use client";
 
 import React, { MouseEvent } from "react";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 import DashIcon from "../../icons/DashIcon";
 // chakra imports
 
-import routes from "../../../../../data/routes";
-
+import routes from "@/data/routes";
 
 type Props = {
-  onClickRoute?: (e: MouseEvent<HTMLElement>) => any | any
-}
+  onClickRoute?: (e: MouseEvent<HTMLElement>) => any | any;
+};
 
 export function SidebarLinks({ onClickRoute }: Props) {
   // Chakra color mode
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   // verifies if routeName is the one active (in browser input)
   const activeRoute = (routeName: string) => {
@@ -38,18 +37,20 @@ export function SidebarLinks({ onClickRoute }: Props) {
                 key={index}
               >
                 <span
-                  className={`${activeRoute(route.path) === true
-                    ? "font-bold text-brand-500 dark:text-white"
-                    : "font-medium text-gray-600"
-                    }`}
+                  className={`${
+                    activeRoute(route.path) === true
+                      ? "font-bold text-brand-500 dark:text-white"
+                      : "font-medium text-gray-600"
+                  }`}
                 >
                   {route.icon ? route.icon : <DashIcon />}{" "}
                 </span>
                 <p
-                  className={`leading-1 ml-4 flex ${activeRoute(route.path) === true
-                    ? "font-bold text-navy-700 dark:text-white"
-                    : "font-medium text-gray-600"
-                    }`}
+                  className={`leading-1 ml-4 flex ${
+                    activeRoute(route.path) === true
+                      ? "font-bold text-navy-700 dark:text-white"
+                      : "font-medium text-gray-600"
+                  }`}
                 >
                   {route.name}
                 </p>
