@@ -1,30 +1,28 @@
 "use client";
-import { supabase } from "../../../supabase/supabase";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { useAuth } from "@/components/providers/supabase-auth-provider";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string | null>(null);
+  const { signOut, signInWithEmail, signInWithGithub, user } = useAuth();
+  const router = useRouter();
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log("Username:", username, "Password:", password);
-    // Here you can add logic to handle the submission, like sending data to a server.
-  };
-
-  const login = async () => {
-    let { data, error } = await supabase.auth.signInWithPassword({
-      email: username,
-      password: password,
-    });
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setError(null);
+    try {
+      const error = await signInWithEmail(email, password);
+      if (error) {
+        setError(error);
+      } else {
+        router.push("/dashboard");
+      }
+    } catch (error) {
+      console.log("Something went wrong!");
+    }
   };
 
   return (
@@ -40,37 +38,56 @@ export default function Login() {
         }}
       >
         <h1 className="text-4xl font-bold text-gray-800 mb-6">Sign In</h1>
-        <input
-          className="input input-bordered w-full mb-4"
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={handleUsernameChange}
-          style={{
-            background: "rgba(255, 255, 255, 0.3)",
-            borderRadius: "0.5rem",
-            color: "black",
-          }}
-        />
-        <input
-          className="input input-bordered w-full mb-4"
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={handlePasswordChange}
-          style={{
-            background: "rgba(255, 255, 255, 0.3)",
-            borderRadius: "0.5rem",
-            color: "black",
-          }}
-        />
-        <button
-          className="btn btn-primary w-full"
-          type="submit"
-          onClick={login}
-        >
-          Submit
+        <div className="mb-4">
+          <label className="block mb-2 text-sm font-medium text-gray-800">
+            Your email
+          </label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            className="input input-bordered w-full"
+            placeholder="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            style={{
+              background: "rgba(255, 255, 255, 0.3)",
+              borderRadius: "0.5rem",
+              color: "black",
+            }}
+          />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2 text-sm font-medium text-gray-800">
+            Password
+          </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            className="input input-bordered w-full"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={{
+              background: "rgba(255, 255, 255, 0.3)",
+              borderRadius: "0.5rem",
+              color: "black",
+            }}
+          />
+        </div>
+        <button className="btn btn-primary w-full" type="submit">
+          Sign In
         </button>
+        <p className="text-sm font-light text-gray-500 mt-4">
+          Don’t have an account yet?{" "}
+          <a
+            href="signup"
+            className="font-medium text-primary-600 hover:underline"
+          >
+            Sign up
+          </a>
+        </p>
       </form>
     </div>
   );

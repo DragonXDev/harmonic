@@ -1,11 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
-import { navbar } from "./components/navbar"; // Adjust the path if Navbar is in a different directory
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <>
-      <navbar />
       <div className="flex max-w-6xl mx-auto flex-col items-center justify-center py-2 min-h-screen">
         <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 sm:mt-20 mt-20 background-gradient">
           <h1 className="mx-auto max-w-4xl font-display text-5xl font-bold tracking-normal text-gray-300 sm:text-9xl leading-relaxed">
